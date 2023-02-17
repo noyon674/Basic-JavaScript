@@ -33,3 +33,33 @@ function Add(x, y, callback){
 Add(20, 50, function(result){
     console.log(result)
 });
+
+/*/////////////////////////////////////////////////////////////////////////////////////
+Asynchronous function: setTimeOut(), setInterval()
+////////////////////////////////////////////////////////////////////////////////////*/
+function result1(){
+    console.log('1 is display');
+}
+function result2(){
+    console.log('2 is display');
+}
+function result3(){
+    console.log('3 is display');
+}
+function result4(){
+    console.log('4 is display');
+}
+/*
+setTimeOut function run just one time
+*/
+result1(); // synchronous function no time taken
+setTimeout(result2, 2000);// asynchronous function time taken 2s
+result3();// synchronous function no time taken
+setTimeout(result4, 1000);// asynchronous function time taken 1s
+
+/*
+setInterval function run continueously 
+*/
+setInterval(function(){
+    console.log('Set Interval running');
+}, 1000);

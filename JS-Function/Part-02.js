@@ -36,7 +36,7 @@ let person = {
         return this.fName+" "+this.lName;
     },
     detail: function(city){
-        return this.fullName+" "+city;
+        return this.fName+" "+this.lName+" "+city;
     }
 }
 let person1 = {

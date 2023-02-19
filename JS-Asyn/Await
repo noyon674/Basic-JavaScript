@@ -1,0 +1,70 @@
+const payment = true;
+const mark = 80;
+let count = 0;
+
+function Enroll(){
+    console.log('Enrollment processing...');
+    const promise = new Promise( (resolve, reject)=>{
+        setTimeout(() => {
+            if(payment){
+                resolve('Your payment done.');
+            } else{
+                reject('Payment failed!');
+            }
+        }, 5000);
+    });
+    return promise;
+}
+
+function progress(){
+    console.log('please wait & progress completing')
+    const promise = new Promise( (resolve, reject)=>{
+        setTimeout(() => {
+            if(mark >= 80){
+                count++;
+                resolve('You got A+');
+            } else{
+                reject('You are fail.')
+            }
+        }, 1);
+    });
+    return promise;
+}
+
+function getCertificate(){
+    const promise = new Promise( (resolve, reject)=>{
+        setTimeout( ()=>{
+            if(count == 1){
+                resolve('You are able to get certificate.');
+            } else{
+                reject('You are not able to get certificate');
+            }
+        }, 1);
+    });
+   return promise;
+}
+
+// Enroll()
+//     .then( (value)=>{
+//     console.log(value);
+//     })
+//     .then(progress)
+//     .then( (value)=>{
+//         console.log(value);
+//     })
+//     .then(getCertificate)
+//     .then( (value)=>{
+//         console.log(value);
+//     })
+
+//     .catch( (err)=>{
+//         console.log(err);
+//     })
+
+async function start(){
+    await Enroll();
+    await progress();
+    await getCertificate();
+}
+
+start();

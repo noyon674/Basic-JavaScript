@@ -4,10 +4,10 @@ try -catch
 */
 
 try{
-    Love('Love is a Horror word.')
+    Love('Love is a Horror word.');
 }
 catch(err){
-    console.log(err.message)
+    console.log(err.message);
 }
 
 //////// Error throwing
